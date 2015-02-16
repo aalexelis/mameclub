@@ -57,14 +57,14 @@
 }
 .face {
 	position: fixed;
-	top: 0;
 	right: 0;
-	bottom: 0;
-	left: 50px;
-	width: 300px;
-	height: 450px;
-	margin: auto 0;
-	background: rgba(255, 0, 0, 0.3);
+    bottom: 100px;
+	left: 0;
+	width: 80%;
+	margin: auto;
+}
+.face > img {
+  width: 100%;
 }
 .image {
 	position: fixed;
@@ -108,4 +108,26 @@ img.kiss {
 	top: 0;
 	left: 0;
 	width: 50px;
+}
+
+#jsi-nominee-face {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  margin: auto;
+}
+#jsi-nominee-face > img.nominee-face {
+  width: 100%;
+}
+#jsi-nominee-face .jsc-nominee-face-frame {
+  position: absolute;
+  top: 52px;
+  left: 120px;
+  width: 196px;
+  height: 274px;
 }

@@ -1,68 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
-    <title>Home</title>
+<head
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>test</title>
+    <link rel="stylesheet" href="/assets/styles/main.css">
 </head>
-<body data-lift-content-id="main">
-<div id="main" data-lift="surround?with=default;at=content" data-ng-app="myNominee">
+<body>
+  <div id="main" data-ng-app="myNominee">
     <div data-ng-controller="myNominee.Ctrl">
+      <div id="jsi-nominee-face">
+        <img src="/assets/images/sample.minami.jpg" alt="" class="nominee-face">
+        <div class="jsc-nominee-face-frame"></div>
+      </div>
 
-    <h2>Nominee</h2>
-        <h3>Vote:</h3>
-        <dl>
-            <dt>Male/Female</dt><dd>{{vote.mf}}</dd>
-            <dt>(x,y)</dt><dd>({{vote.x}},{{vote.y}})</dd>
-            <dt>Bean/Kiss</dt><dd>{{vote.bk}}</dd>
-        </dl>
-        <hr>
-        <h3>Stats:</h3>
-        <dl>
-            <dt>Beans (Men)</dt><dd>{{stats.mb}}</dd>
-            <dt>Kiss (Men)</dt><dd>{{stats.mk}}</dd>
-            <dt>Beans (Female)</dt><dd>{{stats.fb}}</dd>
-            <dt>Kiss (Female)</dt><dd>{{stats.fk}}</dd>
-        </dl>
+      <h2>Nominee</h2>
+      <h3>Vote:</h3>
+      <dl>
+        <dt>Male/Female</dt><dd>{{vote.mf}}</dd>
+        <dt>(x,y)</dt><dd>({{vote.x}},{{vote.y}})</dd>
+        <dt>Bean/Kiss</dt><dd>{{vote.bk}}</dd>
+      </dl>
+      <hr>
+      <h3>Stats:</h3>
+      <dl>
+        <dt>Beans (Men)</dt><dd>{{stats.mb}}</dd>
+        <dt>Kiss (Men)</dt><dd>{{stats.mk}}</dd>
+        <dt>Beans (Female)</dt><dd>{{stats.fb}}</dd>
+        <dt>Kiss (Female)</dt><dd>{{stats.fk}}</dd>
+      </dl>
 
     </div>
     <tail>
-        <div data-lift="nominee"></div>
-        <script id="angularjs" src="/classpath/fobo/angular.js"></script>
-        <script>
-            angular.module('myNominee', [])
-            .controller('myNominee.Ctrl', ['$scope', '$document', function($scope, $document) {
-                $scope.vote = {
-                    nominee: null,
-                    mf: null,
-                    x: null,
-                    y: null,
-                    bk: null
-                }
-                $scope.stats = {
-                    nominee: null,
-                    mb: null,
-                    mk: null,
-                    fb: null,
-                    fk: null
-                }
-                $document
-                    .on('new-ng-vote', function(event, data) {
-                        console.log(data);
-                        $scope.vote.mf = data.mf;
-                        $scope.vote.x = data.x;
-                        $scope.vote.y = data.y;
-                        $scope.vote.bk = data.bk;
-                        $scope.stats.mb = data.mb;
-                        $scope.stats.mk = data.mk;
-                        $scope.stats.fb = data.fb;
-                        $scope.stats.fk = data.fk;
-
-                        $scope.$digest();
-                    });
-            }]);
-        </script>
+      <div data-lift="nominee"></div>
+      <script id="angularjs" src="/classpath/fobo/angular.js"></script>
     </tail>
 
-</div>
+  </div>
+  <script src="/assets/javascripts/jquery.min.js"></script>
+  <script src="/assets/javascripts/main.js"></script>
 </body>
 </html>
+<body>
