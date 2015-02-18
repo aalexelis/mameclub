@@ -53,6 +53,6 @@ case class Score(mb: Int, mk: Int, fb: Int, fk: Int) {
 case class VoteWithScore(nominee: String, mf: String, x: BigDecimal, y: BigDecimal, bk: String, mb: Int, mk: Int, fb: Int, fk: Int)
 
 object VoteWithScore {
-  def apply(v: Vote, s: Score):VoteWithScore = VoteWithScore(v.nominee, v.mf, v.x, v.y, v.bk, s.mb, s.mk, s.fb, s.mk)
+  def apply(v: Vote, s: Score):VoteWithScore = VoteWithScore(v.nominee, v.mf, v.x, v.y, v.bk, s.mb, s.mk, s.fb, s.fk)
 }
 
