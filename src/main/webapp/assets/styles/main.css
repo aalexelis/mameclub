@@ -1,165 +1,166 @@
 @charset 'utf-8';
 
 html, body {
-	background: #EFFFB4;
+  background: #EFFFB4;
 }
 body {
   overflow: hidden;
+  font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
 #jsi-count-mame,
 #jsi-count-kiss {
-	position: absolute;
-	left: 30px;
-	display: block;
-	width: 320px;
-	line-height: 60px;
-	color: #2A6B05;
-	font-size: 50px;
-	font-family: 'Nunito', sans-serif;
+  position: absolute;
+  left: 30px;
+  display: block;
+  width: 320px;
+  line-height: 60px;
+  color: #2A6B05;
+  font-size: 50px;
+  font-family: 'Nunito', sans-serif;
 }
 #jsi-count-mame > span,
 #jsi-count-kiss > span {
-	position: absolute;
-	right: 0;
-	font-size: 60px;
+  position: absolute;
+  right: 0;
+  font-size: 60px;
 }
 #jsi-count-mame {
-	top: 0;
+  top: 0;
 }
 #jsi-count-kiss {
-	top: 70px;
+  top: 70px;
 }
 #jsi-count-mame-vote,
 #jsi-count-kiss-vote {
-	position: absolute;
-	left: 30px;
-	display: block;
-	width: 320px;
-	line-height: 60px;
-	color: #2A6B05;
-	font-size: 30px;
-	font-family: 'Nunito', sans-serif;
+  position: absolute;
+  left: 30px;
+  display: block;
+  width: 320px;
+  line-height: 60px;
+  color: #2A6B05;
+  font-size: 30px;
+  font-family: 'Nunito', sans-serif;
 }
 #jsi-count-mame-vote > span,
 #jsi-count-kiss-vote > span {
-	position: absolute;
-	right: 0;
-	font-size: 60px;
+  position: absolute;
+  right: 0;
+  font-size: 60px;
 }
 #jsi-count-mame-vote {
-	top: 0;
+  top: 0;
 }
 #jsi-count-kiss-vote {
-	top: 60px;
+  top: 60px;
 }
 .screen {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: #FFFFFF;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #FFFFFF;
 }
 .splash {
-	z-index: 3;
+  z-index: 3;
 }
 .splash > img {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	width: 200px;
-	margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  margin: auto;
 }
-.gendor {
-	z-index: 2;
+.gender {
+  z-index: 2;
 }
-.gendor > input[type=text] {
-	position: absolute;
-	top: -75px;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	width: 80%;
-	height: 50px;
-	margin: auto;
+.gender > input[type=text] {
+  position: absolute;
+  top: -75px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 80%;
+  height: 50px;
+  margin: auto;
 }
-.gendor > input[type=submit] {
-	position: absolute;
-	top: 75px;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	width: 60%;
-	height: 50px;
-	margin: auto;
+.gender > input[type=submit] {
+  position: absolute;
+  top: 75px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+  height: 50px;
+  margin: auto;
 }
 .main {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 .count {
-	margin: 20px;
-	font-size: 20px;
-	font-weight: bold;
+  margin: 20px;
+  font-size: 20px;
+  font-weight: bold;
 }
 .face {
-	position: fixed;
-	right: 0;
+  position: fixed;
+  right: 0;
     bottom: 120px;
-	left: 0;
-	width: 60%;
-	margin: auto;
+  left: 0;
+  width: 60%;
+  margin: auto;
 }
 .face > img {
   width: 100%;
 }
 .image {
-	position: fixed;
-	top: 0;
-	right: 50px;
-	bottom: 0;
-	width: 300px;
-	height: 450px;
-	margin: auto 0;
-	background: rgba(0, 0, 255, 0.3);
+  position: fixed;
+  top: 0;
+  right: 50px;
+  bottom: 0;
+  width: 300px;
+  height: 450px;
+  margin: auto 0;
+  background: rgba(0, 0, 255, 0.3);
 }
 .mode {
-	position: fixed;
-	right: 0;
-	bottom: 50px;
-	left: 0;
-	display: block;
-	width: 100px;
-	height: 44px;
-	margin: auto;
-	background: #ccc;
+  position: fixed;
+  right: 0;
+  bottom: 50px;
+  left: 0;
+  display: block;
+  width: 100px;
+  height: 44px;
+  margin: auto;
+  background: #ccc;
 }
 .mode.mame {
-	margin-left: 50px;
+  margin-left: 50px;
 }
 .mode.kiss {
-	margin-left: 200px;
+  margin-left: 200px;
 }
 .mode > input {
-	display: none;
+  display: none;
 }
 
 img.mame {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
 }
 img.kiss {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
 }
 
 #jsi-nominee-face {
@@ -183,4 +184,83 @@ img.kiss {
   left: 120px;
   width: 196px;
   height: 274px;
+}
+.gender-inner {
+  position: fixed;
+  top: -120px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 290px;
+  margin: auto;
+  font-size: 0;
+  text-align: center;
+}
+.gender-inner > p {
+  font-size: 40px;
+}
+.gender-male,
+.gender-female {
+  position: relative;
+  display: inline-block;
+  width: 130px;
+  height: 130px;
+  line-height: 150px;
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: center;
+}
+.gender-male > img,
+.gender-female > img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 50%;
+  margin: auto;
+}
+.gender-male {
+  background: #D1D1F8;
+}
+.gender-female {
+  background: #F0C8C8;
+}
+.gender-male + * {
+  margin-left: 15px;
+}
+#jsi-nominees {
+  z-index: 1;
+}
+.nominees-inner {
+  position: fixed;
+  top: -300px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 290px;
+  margin: auto;
+  font-size: 0;
+  text-align: center;
+}
+.nominees-inner > p {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+#jsi-nominees .nominee {
+  position: relative;
+  display: inline-block;
+  width: 130px;
+  height: 130px;
+  line-height: 150px;
+  overflow: hidden;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: center;
+}
+#jsi-nominees .nominee > img {
+  width: 100%;
 }

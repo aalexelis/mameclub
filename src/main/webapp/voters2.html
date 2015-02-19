@@ -7,14 +7,27 @@
   <link rel="stylesheet" href="/assets/styles/main.css">
 </head>
 <body>
-  <!-- <div class="splash screen" id="jsi&#45;splash"> -->
-  <!--     <img src="/assets/images/logo.png" alt=""> -->
-  <!-- </div> -->
-  <!-- <div class="gendor screen" id="jsi&#45;gendor"> -->
-  <!-- 	<p>性別は?</p> -->
-	<!-- <a href="javascript: void(0);">男性</a> -->
-	<!-- <a href="javascript: void(0);">女性</a> -->
-  <!-- </div> -->
+  <div class="splash screen" id="jsi-splash">
+      <img src="/assets/images/logo.png" alt="">
+  </div>
+  <div class="gender screen" id="jsi-gender">
+    <div class="gender-inner">
+      <p>性別は?</p>
+      <a href="javascript: void(0);" class="gender-male jsc-gender-select" rel="m"><img src="/assets/images/icon.male.png" alt=""></a>
+      <a href="javascript: void(0);" class="gender-female jsc-gender-select" rel="m"><img src="/assets/images/icon.female.png" alt=""></a>
+    </div>
+  </div>
+  <div class="nominees screen" id="jsi-nominees">
+    <div class="nominees-inner">
+      <p>誰にする?</p>
+      <a href="javascript: void(0);" class="nominee jsc-nominees-select" rel="1"><img src="/assets/images/nominee.minami.normal.png" alt=""></a>
+      <a href="javascript: void(0);" class="nominee jsc-nominees-select" rel="2"><img src="/assets/images/nominee.nagata.normal.png" alt=""></a>
+      <a href="javascript: void(0);" class="nominee jsc-nominees-select" rel="3"><img src="/assets/images/nominee.takeuchi.normal.png" alt=""></a>
+      <a href="javascript: void(0);" class="nominee jsc-nominees-select" rel="4"><img src="/assets/images/nominee.tada.normal.png" alt=""></a>
+      <a href="javascript: void(0);" class="nominee jsc-nominees-select" rel="5"><img src="/assets/images/nominee.seki.normal.png" alt=""></a>
+      <a href="javascript: void(0);" class="nominee jsc-nominees-select" rel="6"><img src="/assets/images/nominee.sonoda.normal.png" alt=""></a>
+    </div>
+  </div>
   <div class="main" id="jsi-main">
     <p class="count" id="jsi-count-mame-vote">mame: <span>0</span></p>
     <p class="count" id="jsi-count-kiss-vote">kiss: <span>0</span></p>

@@ -11,41 +11,67 @@ Splash.prototype = {
     var _this = this;
 
     setTimeout(function () {
+    //   _this.$splash.fadeOut(0);
+    // }, 0);
       _this.$splash.fadeOut(500);
     }, 2000);
   }
 };
 
-var Name = function () {
-  this.$name = $('#jsi-name');
-  this.$text = $('#jsi-name-text');
-  this.$submit = this.$name.find('input[type=submit]');
-  new FaceToucher();
+var Gender = function () {
+  this.$gender = $('#jsi-gender');
+  this.$triggers = this.$gender.find('.jsc-gender-select');
+  this.gender = 'm';
 
   this.init();
 };
-Name.prototype = {
+Gender.prototype = {
   init: function () {
     this.bindEvents();
   },
   bindEvents: function () {
     var _this = this;
 
-    this.$submit.on('click', function () {
-      new FaceToucher(_this.$text.val());
+    this.$triggers.on('click', function () {
+      new Nominees($(this).attr('rel'));
       _this.remove();
     });
   },
   remove: function () {
-    var _this = this;
-
-    _this.$name.fadeOut(500);
+    this.$gender.fadeOut(500);
   }
 };
 
-var FaceToucher = function () {
+var Nominees = function (gender) {
+  this.$nominees = $('#jsi-nominees');
+  this.$triggers = this.$nominees.find('.jsc-nominees-select');
+  this.gender = gender;
+  this.nominee = '1';
+
+  this.init();
+};
+Nominees.prototype = {
+  init: function () {
+    this.bindEvents();
+  },
+  bindEvents: function () {
+    var _this = this;
+
+    this.$triggers.on('click', function () {
+      new FaceToucher(_this.gender, $(this).attr('rel'));
+      _this.remove();
+    });
+  },
+  remove: function () {
+    this.$nominees.fadeOut(500);
+  }
+};
+
+var FaceToucher = function (gender, nominee) {
   this.$face = $('#jsi-main-face');
   this.$mode = $('.jsc-mode').find('input');
+  this.gender = gender;
+  this.nominee = nominee;
   this.countMame = 0;
   this.countKiss = 0;
   this.$countMame = $('#jsi-count-mame-vote').find('span');
@@ -108,7 +134,8 @@ FaceToucher.prototype = {
   },
   sendToSrv: function (name, x, y, bk) {
     //TODO Temporarily vote sent to nominee="2" from male/famale="m" FIX THIS TOGETHER WITH FRONT-END
-    var vote = {nominee: "2",  mf: "m", x: x, y: y, bk: bk}
+    var vote = {nominee: this.nominee,  mf: this.gender, x: x, y: y, bk: bk}
+
     $.ajax({
       type: "POST",
       url: 'vote',
@@ -278,7 +305,7 @@ Nominee.prototype = {
 };
 
 $(function () {
-  // new Splash();
-  new Name();
+  new Splash();
+  new Gender();
   new Nominee();
 });
