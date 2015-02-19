@@ -4,32 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0">
     <title>test</title>
+	<link href="http://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/assets/styles/main.css">
 </head>
 <body>
   <div id="main" data-ng-app="myNominee">
     <div data-ng-controller="myNominee.Ctrl">
+	  <p id="jsi-count-mame">mame: <span ng-model="vote.mb">999</span></p>
+	  <p id="jsi-count-kiss">kiss: <span ng-model="vote.mk">999</span></p>
       <div id="jsi-nominee-face">
-        <img src="/assets/images/sample.minami.jpg" alt="" class="nominee-face">
+        <img src="/assets/images/nominee.minami.normal.jpg" alt="" class="nominee-face">
         <div class="jsc-nominee-face-frame"></div>
       </div>
-
-      <h2>Nominee</h2>
-      <h3>Vote:</h3>
-      <dl>
-        <dt>Male/Female</dt><dd>{{vote.mf}}</dd>
-        <dt>(x,y)</dt><dd>({{vote.x}},{{vote.y}})</dd>
-        <dt>Bean/Kiss</dt><dd>{{vote.bk}}</dd>
-      </dl>
-      <hr>
-      <h3>Stats:</h3>
-      <dl>
-        <dt>Beans (Men)</dt><dd>{{stats.mb}}</dd>
-        <dt>Kiss (Men)</dt><dd>{{stats.mk}}</dd>
-        <dt>Beans (Female)</dt><dd>{{stats.fb}}</dd>
-        <dt>Kiss (Female)</dt><dd>{{stats.fk}}</dd>
-      </dl>
-
     </div>
     <tail>
       <div data-lift="nominee"></div>
