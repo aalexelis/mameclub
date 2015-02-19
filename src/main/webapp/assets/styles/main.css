@@ -1,7 +1,56 @@
 @charset 'utf-8';
 
+html, body {
+	background: #EFFFB4;
+}
 body {
   overflow: hidden;
+}
+#jsi-count-mame,
+#jsi-count-kiss {
+	position: absolute;
+	left: 30px;
+	display: block;
+	width: 320px;
+	line-height: 60px;
+	color: #2A6B05;
+	font-size: 50px;
+	font-family: 'Nunito', sans-serif;
+}
+#jsi-count-mame > span,
+#jsi-count-kiss > span {
+	position: absolute;
+	right: 0;
+	font-size: 60px;
+}
+#jsi-count-mame {
+	top: 0;
+}
+#jsi-count-kiss {
+	top: 70px;
+}
+#jsi-count-mame-vote,
+#jsi-count-kiss-vote {
+	position: absolute;
+	left: 30px;
+	display: block;
+	width: 320px;
+	line-height: 60px;
+	color: #2A6B05;
+	font-size: 30px;
+	font-family: 'Nunito', sans-serif;
+}
+#jsi-count-mame-vote > span,
+#jsi-count-kiss-vote > span {
+	position: absolute;
+	right: 0;
+	font-size: 60px;
+}
+#jsi-count-mame-vote {
+	top: 0;
+}
+#jsi-count-kiss-vote {
+	top: 60px;
 }
 .screen {
 	position: fixed;
@@ -23,10 +72,10 @@ body {
 	width: 200px;
 	margin: auto;
 }
-.name {
+.gendor {
 	z-index: 2;
 }
-.name > input[type=text] {
+.gendor > input[type=text] {
 	position: absolute;
 	top: -75px;
 	right: 0;
@@ -36,7 +85,7 @@ body {
 	height: 50px;
 	margin: auto;
 }
-.name > input[type=submit] {
+.gendor > input[type=submit] {
 	position: absolute;
 	top: 75px;
 	right: 0;
@@ -123,6 +172,7 @@ img.kiss {
   height: 400px;
   overflow: hidden;
   margin: auto;
+  border-radius: 100%;
 }
 #jsi-nominee-face > img.nominee-face {
   width: 100%;

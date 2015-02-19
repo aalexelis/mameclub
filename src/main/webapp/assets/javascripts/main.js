@@ -20,6 +20,7 @@ var Name = function () {
   this.$name = $('#jsi-name');
   this.$text = $('#jsi-name-text');
   this.$submit = this.$name.find('input[type=submit]');
+  new FaceToucher();
 
   this.init();
 };
@@ -42,21 +43,18 @@ Name.prototype = {
   }
 };
 
-var FaceToucher = function (name) {
+var FaceToucher = function () {
   this.$face = $('#jsi-main-face');
   this.$mode = $('.jsc-mode').find('input');
   this.countMame = 0;
   this.countKiss = 0;
-  this.$countMame = $('#jsi-count-mame').find('span');
-  this.$countKiss = $('#jsi-count-kiss').find('span');
-  this.name = name;
-  this.$name = $('#jsi-name-view').find('span');
+  this.$countMame = $('#jsi-count-mame-vote').find('span');
+  this.$countKiss = $('#jsi-count-kiss-vote').find('span');
 
   this.init();
 };
 FaceToucher.prototype = {
   init: function () {
-    this.$name.text(this.name);
     this.bindEvents();
   },
   bindEvents: function () {
