@@ -14,10 +14,10 @@
 
 
 
-    <logger name="code.snippet" level="debug" />
-    <logger name="net.liftweb" level="debug" />
-    <logger name="bootstrap.liftweb" level="debug" />
-    <root level="debug">
+    <logger name="code.snippet" level="info" />
+    <logger name="net.liftweb" level="warn" />
+    <logger name="bootstrap.liftweb" level="info" />
+    <root level="warn">
         <appender-ref ref="STDOUT" />
     </root>
 </configuration>
