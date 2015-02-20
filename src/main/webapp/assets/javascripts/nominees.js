@@ -26,8 +26,8 @@ Mame.prototype = {
     this.$image.css({
       top: this.y,
       left: this.x,
-      marginTop: this.$image.height() / 2,
-      marginLeft: this.$image.width() / 2,
+      marginTop: - this.$image.height() / 2,
+      marginLeft: - this.$image.width() / 2,
       transform: 'rotate(' + this.rotate + 'deg)'
     });
 
@@ -67,8 +67,8 @@ Kiss.prototype = {
     this.$image.css({
       top: this.y,
       left: this.x,
-      marginTop: this.$image.height() / 2,
-      marginLeft: this.$image.width() / 2,
+      marginTop: - this.$image.height() / 2,
+      marginLeft: - this.$image.width() / 2,
       transform: 'rotate(' + this.rotate + 'deg)'
     });
 
@@ -81,9 +81,9 @@ Kiss.prototype = {
 };
 
 var Nominee = function () {
-  this.srcFace = 'sample.minami';
   this.$face = $('#jsi-nominee-face');
   this.$image = this.$face.find('.nominee-face');
+  this.srcFace = this.$image.attr('src');
   this.$scope = null;
 
   this.init();
@@ -97,18 +97,43 @@ Nominee.prototype = {
 
   },
   changeFace2Mame: function () {
-    this.$image.attr('src', '/assets/images/' + this.srcFace + '.mame.jpg');
+    if (/normal/.test(this.srcFace)) {
+      this.srcFace = this.srcFace.replace(/normal/, 'pain');
+    } else if (/lough/.test(this.srcFace)) {
+      this.srcFace = this.srcFace.replace(/lough/, 'pain');
+    } else {
+      return;
+    }
+
+	console.log(this.srcFace);
+
+    this.$image.attr('src', this.srcFace);
 
     setTimeout($.proxy(function () {
-      this.$image.attr('src', '/assets/images/' + this.srcFace + '.jpg');
+      this.changeFace2Normal();
     }, this), 1000);
   },
   changeFace2Kiss: function () {
-    this.$image.attr('src', '/assets/images/' + this.srcFace + '.kiss.jpg');
+    if (/normal/.test(this.srcFace)) {
+      this.srcFace = this.srcFace.replace(/normal/, 'lough');
+    } else if (/pain/.test(this.srcFace)) {
+      this.srcFace = this.srcFace.replace(/pain/, 'lough');
+    }
+
+    this.$image.attr('src', this.srcFace);
 
     setTimeout($.proxy(function () {
-      this.$image.attr('src', '/assets/images/' + this.srcFace + '.jpg');
+      this.changeFace2Normal();
     }, this), 1000);
+  },
+  changeFace2Normal: function () {
+    if (/pain/.test(this.srcFace)) {
+      this.srcFace = this.srcFace.replace(/pain/, 'normal');
+    } else if (/lough/.test(this.srcFace)) {
+      this.srcFace = this.srcFace.replace(/lough/, 'normal');
+    }
+
+    this.$image.attr('src', this.srcFace);
   }
 };
 
