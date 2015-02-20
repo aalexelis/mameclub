@@ -11,7 +11,18 @@ object State {
     "1" -> new NomineeState,
     "2" -> new NomineeState,
     "3" -> new NomineeState,
-    "4" -> new NomineeState
+    "4" -> new NomineeState,
+    "5" -> new NomineeState,
+    "6" -> new NomineeState
+  )
+
+  val pics = Map[String, String](
+    "1" -> "nominee.minami.normal.jpg",
+    "2" -> "nominee.nagata.normal.jpg",
+    "3" -> "nominee.seki.normal.jpg",
+    "4" -> "nominee.sonoda.normal.jpg",
+    "5" -> "nominee.tada.normal.jpg",
+    "6" -> "nominee.takeuchi.normal.jpg"
   )
 
   def addVote(v:Vote) = nominees.get(v.nominee).foreach(_ ! v)

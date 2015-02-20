@@ -107,9 +107,10 @@ class Boot extends Loggable {
     val nominees = Menu.i("Nominees") / "nominees"
     val results = Menu.i("Results") / "results"
     val voters = Menu.i("Voters") / "voters"
-    val voters2 = Menu.i("Voters2") / "voters2"
+    val top = Menu.i("Top") / "top"
     val userMenu = User.AddUserMenusHere
     val static = Menu(Loc("Static", Link(List("static"), true, "/static/index"), S.loc("StaticContent", scala.xml.Text("Static Content")), LocGroup("lg2", "topRight")))
+    def nominee(no:String) = Menu(Loc("Nominee"+no, Link(List("nominee"+no), true, "/nominee/"+no), S.loc("Nominee"+no, scala.xml.Text("Nominee "+no)), LocGroup("lg2", "topRight")))
     val twbs = Menu(Loc("twbs",
       ExtLink("http://getbootstrap.com/"),
       S.loc("Bootstrap3", Text("Bootstrap3")),
@@ -119,16 +120,17 @@ class Boot extends Loggable {
 
     def sitemap = SiteMap(
       home >> LocGroup("lg1"),
-      static,
-      twbs,
-      ddLabel1 >> LocGroup("topRight") >> PlaceHolder submenus (
-        divider1 >> FoBo.TBLocInfo.Divider >> userMenu
-        ),
-      nominee >> LocGroup("lg1"),
+      top >> LocGroup("lg1"),
+      nominee("1"),
+      nominee("2"),
+      nominee("3"),
+      nominee("4"),
+      nominee("5"),
+      nominee("6"),
+      nominee >> Hidden,
       nominees >> LocGroup("lg1"),
       results >> LocGroup("lg1"),
-      voters >> LocGroup("lg1"),
-      voters2 >> LocGroup("lg1")
+      voters >> LocGroup("lg1")
     )
   }
 }

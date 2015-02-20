@@ -1,20 +1,44 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
-    <title>Home</title>
-  </head>
-  <body data-lift-content-id="main">
-    <div id="main" data-lift="surround?with=default;at=content">
-
-      <h2>Welcome to your project!</h2>
-      <p>
-	<span data-lift="helloWorld.howdy">
-	  Welcome to your Lift app at <span id="time">Time goes here</span>
-	</span>
-      </p>
-      
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0,scalable=no,maximum-scale=1.0,minimum-scale=1.0">
+  <title>test</title>
+  <link rel="stylesheet" href="/assets/styles/main.css">
+</head>
+<body>
+  <div class="splash screen" id="jsi-splash">
+      <img src="/assets/images/logo.png" alt="">
+  </div>
+  <div class="gender screen" id="jsi-gender">
+    <div class="gender-inner">
+      <p>性別は?</p>
+      <a href="javascript: void(0);" class="gender-male jsc-gender-select" rel="m"><img src="/assets/images/icon.male.png" alt=""></a>
+      <a href="javascript: void(0);" class="gender-female jsc-gender-select" rel="m"><img src="/assets/images/icon.female.png" alt=""></a>
     </div>
-  </body>
-</html>
+  </div>
+  <div class="nominees screen" id="jsi-nominees">
+    <div class="nominees-inner">
+      <p>誰にする?</p>
+      <a href="javascript: void(0);" class="nominee jsc-nominees-select" rel="1"><img src="/assets/images/nominee.minami.normal.jpg" alt=""></a>
+      <a href="javascript: void(0);" class="nominee jsc-nominees-select" rel="2"><img src="/assets/images/nominee.nagata.normal.jpg" alt=""></a>
+      <a href="javascript: void(0);" class="nominee jsc-nominees-select" rel="3"><img src="/assets/images/nominee.takeuchi.normal.jpg" alt=""></a>
+      <a href="javascript: void(0);" class="nominee jsc-nominees-select" rel="4"><img src="/assets/images/nominee.tada.normal.jpg" alt=""></a>
+      <a href="javascript: void(0);" class="nominee jsc-nominees-select" rel="5"><img src="/assets/images/nominee.seki.normal.jpg" alt=""></a>
+      <a href="javascript: void(0);" class="nominee jsc-nominees-select" rel="6"><img src="/assets/images/nominee.sonoda.normal.jpg" alt=""></a>
+    </div>
+  </div>
+  <div class="main" id="jsi-main">
+    <p class="count" id="jsi-count-mame-vote">mame: <span>0</span></p>
+    <p class="count" id="jsi-count-kiss-vote">kiss: <span>0</span></p>
+    <div class="face" id="jsi-main-face"><img src="/assets/images/face.png" alt=""></div>
+    <label class="mode mame jsc-mode">mame<input type="radio" name="mode" value="mame" checked></label>
+    <label class="mode kiss jsc-mode">kiss<input type="radio" name="mode" value="kiss"></label>
+  </div>
+  <div class="select" id="jsi-select">
+  </div>
 
+  <script src="/assets/javascripts/jquery.min.js"></script>
+  <script src="/assets/javascripts/voters.js"></script>
+</body>
+</html>

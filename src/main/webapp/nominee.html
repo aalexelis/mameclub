@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0">
     <title>test</title>
 	<link href="http://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/assets/styles/main.css">
+    <script id="jquery" src="/classpath/fobo/jquery.js" type="text/javascript"></script>
+    <script id="json" src="/classpath/json.js" type="text/javascript"></script>
 </head>
 <body>
   <div id="main" data-ng-app="myNominee">
     <div data-ng-controller="myNominee.Ctrl">
-	  <p id="jsi-count-mame">mame: <span ng-model="vote.mb">999</span></p>
-	  <p id="jsi-count-kiss">kiss: <span ng-model="vote.mk">999</span></p>
-      <div id="jsi-nominee-face">
+	  <p id="jsi-count-mame">mame: <span ng-bind="stats.mb">999</span></p>
+	  <p id="jsi-count-kiss">kiss: <span ng-bind="stats.mk">999</span></p>
+      <div id="jsi-nominee-face" data-lift="Nominee.pic">
         <img src="/assets/images/nominee.minami.normal.jpg" alt="" class="nominee-face">
         <div class="jsc-nominee-face-frame"></div>
       </div>
     </div>
     <tail>
-      <div data-lift="nominee"></div>
+      <div data-lift="Nominee.comet"></div>
       <script id="angularjs" src="/classpath/fobo/angular.js"></script>
+        <script src="/assets/javascripts/nominees.js"></script>
     </tail>
-
   </div>
-  <script src="/assets/javascripts/jquery.min.js"></script>
-  <script src="/assets/javascripts/main.js"></script>
 </body>
 </html>
 <body>

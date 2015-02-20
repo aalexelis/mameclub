@@ -1,5 +1,6 @@
 package code.snippet
 
+import code.lib.State
 import net.liftweb.http.S
 import net.liftweb.util._
 import Helpers._
@@ -9,7 +10,9 @@ import Helpers._
  */
 class Nominee(pi: ParamInfo) {
 
-  def render = <lift:comet type="NomineeComet" name={pi.theParam}/>
+  def img_src:String = "/assets/images/"+State.pics.getOrElse(pi.theParam,"face.png")
+  def pic = "img [src]" #> img_src
+  def comet = <lift:comet type="NomineeComet" name={pi.theParam}/>
 }
 
 case class ParamInfo(theParam: String)
