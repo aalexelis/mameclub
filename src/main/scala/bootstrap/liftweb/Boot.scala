@@ -109,13 +109,7 @@ class Boot extends Loggable {
     val voters = Menu.i("Voters") / "voters"
     val top = Menu.i("Top") / "top"
     val userMenu = User.AddUserMenusHere
-    val static = Menu(Loc("Static", Link(List("static"), true, "/static/index"), S.loc("StaticContent", scala.xml.Text("Static Content")), LocGroup("lg2", "topRight")))
     def nominee(no:String) = Menu(Loc("Nominee"+no, Link(List("nominee"+no), true, "/nominee/"+no), S.loc("Nominee"+no, scala.xml.Text("Nominee "+no)), LocGroup("lg2", "topRight")))
-    val twbs = Menu(Loc("twbs",
-      ExtLink("http://getbootstrap.com/"),
-      S.loc("Bootstrap3", Text("Bootstrap3")),
-      LocGroup("lg2"),
-      FoBo.TBLocInfo.LinkTargetBlank))
 
 
     def sitemap = SiteMap(

@@ -1,5 +1,6 @@
 package code.lib
 
+import code.model.Stats
 import net.liftweb.actor.LiftActor
 import net.liftweb.http.ListenerManager
 
@@ -27,6 +28,34 @@ object State {
 
   def addVote(v:Vote) = nominees.get(v.nominee).foreach(_ ! v)
 
+  def saveScore() = {
+    def saveNominee(id: String, score: Score) ={
+      println("id: " + id + ",  score: " + score)
+      Stats.create.nominee(id).dispName("nameHere")
+        .maleBeans(score.mb).maleKisses(score.mk).
+        femaleBeans(score.fb).femaleKisses(score.fk)
+        .save()
+    }
+    nominees.foreach((s: (String,NomineeState)) => {saveNominee(s._1,s._2.getScore)})
+
+  }
+
+  def loadScore() = {
+    val scores = Stats.findAll()
+    scores.foreach(st => {
+      println("id: " + st.nominee.get + ",  score: " + Score(st.maleBeans.get,st.maleKisses.get,st.femaleBeans.get,st.femaleKisses.get) )
+      nominees.get(st.nominee.get).foreach(_.setScore(Score(st.maleBeans.get,st.maleKisses.get,st.femaleBeans.get,st.femaleKisses.get)))
+    })
+  }
+
+  def resetScore() = {
+    Stats.findAll().foreach(s => println("delete: " + Stats.delete_!(s)))
+    nominees.foreach((s: (String, NomineeState)) => {
+      s._2.setScore(Score(0, 0, 0, 0))
+    })
+    saveScore()
+  }
+
 }
 
 class NomineeState extends LiftActor with ListenerManager {
@@ -47,6 +76,14 @@ class NomineeState extends LiftActor with ListenerManager {
       updateListeners()
 
   }
+
+  def getScore = Score(score.mb, score.mk, score.fb, score.fk)
+
+  def setScore(s: Score) = { score = s}
+
+  def getKisses = score.mk + score.fk
+
+  def getBeans = score.mb + score.fb
 
 }
 

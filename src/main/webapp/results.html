@@ -7,12 +7,36 @@
 <body data-lift-content-id="main">
 <div id="main" data-lift="surround?with=default;at=content">
 
-    <h2>Welcome to your project!</h2>
-    <p>
-	<span data-lift="helloWorld.howdy">
-	  Welcome to your Lift app at <span id="time">Time goes here</span>
-	</span>
-    </p>
+    <h2>Mameclub Results</h2>
+	<div data-lift="Results" class="row">
+        <div class="col-sm-6">
+            <h3>Kisses</h3>
+	  <ul id="kisses">
+          <li>
+              <div>
+                  <div class="id">1</div>
+                  <img src="/assets/images/nominee.minami.normal.jpg" alt="" width="20%" height="20%"  class="nominee-face">
+                  <div class="totkisses">30</div>
+                  <div class="score">(1,2,3,4)</div>
+              </div>
+          </li>
+      </ul>
+        </div>
+        <div class="col-sm-6">
+            <h3>Beans</h3>
+            <ul id="beans">
+                <li>
+                    <div>
+                        <div class="id">1</div>
+                        <img src="/assets/images/nominee.minami.normal.jpg" alt="" width="20%" height="20%"  class="nominee-face">
+                        <div class="totbeans">30</div>
+                        <div class="score">(1,2,3,4)
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+	</div>
 
 </div>
 </body>
