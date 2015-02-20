@@ -151,10 +151,12 @@ angular.module('myNominee', [])
       }
       $scope.stats = {
         nominee: null,
-        mb: null,
-        mk: null,
-        fb: null,
-        fk: null
+        mb: 0,
+        mk: 0,
+        fb: 0,
+        fk: 0,
+        tb: function() { return (this.mb + this.fb);},
+        tk: function() { return (this.mk + this.fk);}
       }
       _this.$scope = $scope;
 

@@ -12,8 +12,8 @@
 <body>
   <div id="main" data-ng-app="myNominee">
     <div data-ng-controller="myNominee.Ctrl">
-	  <p id="jsi-count-mame">mame: <span ng-bind="stats.mb">999</span></p>
-	  <p id="jsi-count-kiss">kiss: <span ng-bind="stats.mk">999</span></p>
+	  <p id="jsi-count-mame">mame: <span ng-bind="stats.tb()">999</span></p>
+	  <p id="jsi-count-kiss">kiss: <span ng-bind="stats.tk()">999</span></p>
       <div id="jsi-nominee-face" data-lift="Nominee.pic">
         <img src="/assets/images/nominee.minami.normal.jpg" alt="" class="nominee-face">
         <div class="jsc-nominee-face-frame"></div>
