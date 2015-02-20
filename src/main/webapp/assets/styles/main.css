@@ -44,7 +44,7 @@ body {
 #jsi-count-mame-vote > span,
 #jsi-count-kiss-vote > span {
   position: absolute;
-  right: 20px;
+  right: 0;
   font-size: 60px;
 }
 #jsi-count-mame-vote {
@@ -131,20 +131,29 @@ body {
 }
 .mode {
   position: fixed;
-  right: 0;
-  bottom: 50px;
-  left: 0;
+  bottom: 30px;
   display: block;
-  width: 100px;
-  height: 44px;
+  width: 38%;
+  height: 36px;
   margin: auto;
+  padding-top: 8px;
   background: #ccc;
+  border-radius: 5px;
+  text-align: center;
 }
 .mode.mame {
-  margin-left: 50px;
+  left: 10%;
+  background: #8ECF69;
+}
+.mode.mame.focused {
+  background: #609443;
 }
 .mode.kiss {
-  margin-left: 200px;
+  right: 10%;
+  background: #FFAAA9;
+}
+.mode.kiss.focused {
+  background: #E27775;
 }
 .mode > input {
   display: none;

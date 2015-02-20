@@ -89,6 +89,16 @@ FaceToucher.prototype = {
     this.$face.on('touchend', function (e) {
       _this.touchFace(e);
     });
+    this.$mode.on('change', function () {
+      _this.changeMode($(this));
+    });
+  },
+  changeMode: function ($target) {
+    var
+      $label = $target.closest('label');
+
+    this.$mode.closest('label').removeClass('focused');
+    $label.addClass('focused');
   },
   touchFace: function (e) {
     var
