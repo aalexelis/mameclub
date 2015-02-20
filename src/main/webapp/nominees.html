@@ -8,21 +8,159 @@
 <div id="main" data-lift="surround?with=default;at=content">
 
     <h2>Nominees</h2>
+    <div data-ng-app="myNominees">
+    <div class="row" data-ng-controller="myNominees.Ctrl">
+        <div class = "col-sm-4">
+            <div >
+                <p id="jsi-count-mame">mame: <span ng-bind="statss['1'].stats.tb()">999</span></p>
+                <p id="jsi-count-kiss">kiss: <span ng-bind="statss['1'].stats.tk()">999</span></p>
+                <div id="jsi-nominee-face" data-lifty="Nominee.pic">
+                    <img src="/assets/images/nominee.minami.normal.jpg" alt="" width="90%" height="90%"  class="nominee-face">
+                    <div class="jsc-nominee-face-frame"></div>
+                </div>
+            </div>
+        </div>
+        <div class = "col-sm-4">
+            <div >
+                <p id="jsi-count-mame">mame: <span ng-bind="stats.tb()">999</span></p>
+                <p id="jsi-count-kiss">kiss: <span ng-bind="stats.tk()">999</span></p>
+                <div id="jsi-nominee-face" data-lifty="Nominee.pic">
+                    <img src="/assets/images/nominee.minami.normal.jpg" alt="" width="90%" height="90%"  class="nominee-face">
+                    <div class="jsc-nominee-face-frame"></div>
+                </div>
+            </div>
+        </div>
+        <div class = "col-sm-4">
+            <div >
+                <p id="jsi-count-mame">mame: <span ng-bind="stats.tb()">999</span></p>
+                <p id="jsi-count-kiss">kiss: <span ng-bind="stats.tk()">999</span></p>
+                <div id="jsi-nominee-face" data-lifty="Nominee.pic">
+                    <img src="/assets/images/nominee.minami.normal.jpg" alt="" width="90%" height="90%"  class="nominee-face">
+                    <div class="jsc-nominee-face-frame"></div>
+                </div>
+            </div>
+        </div>
+        <div class = "col-sm-4">
+            <div >
+                <p id="jsi-count-mame">mame: <span ng-bind="stats.tb()">999</span></p>
+                <p id="jsi-count-kiss">kiss: <span ng-bind="stats.tk()">999</span></p>
+                <div id="jsi-nominee-face" data-lifty="Nominee.pic">
+                    <img src="/assets/images/nominee.minami.normal.jpg" alt="" width="90%" height="90%"  class="nominee-face">
+                    <div class="jsc-nominee-face-frame"></div>
+                </div>
+            </div>
+        </div>
+        <div class = "col-sm-4">
+            <div >
+                <p id="jsi-count-mame">mame: <span ng-bind="stats.tb()">999</span></p>
+                <p id="jsi-count-kiss">kiss: <span ng-bind="stats.tk()">999</span></p>
+                <div id="jsi-nominee-face" data-lifty="Nominee.pic">
+                    <img src="/assets/images/nominee.minami.normal.jpg" alt="" width="90%" height="90%"  class="nominee-face">
+                    <div class="jsc-nominee-face-frame"></div>
+                </div>
+            </div>
+        </div>
+        <div class = "col-sm-4">
+            <div >
+                <p id="jsi-count-mame">mame: <span ng-bind="stats.tb()">999</span></p>
+                <p id="jsi-count-kiss">kiss: <span ng-bind="stats.tk()">999</span></p>
+                <div id="jsi-nominee-face" data-lifty="Nominee.pic">
+                    <img src="/assets/images/nominee.minami.normal.jpg" alt="" width="90%" height="90%"  class="nominee-face">
+                    <div class="jsc-nominee-face-frame"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 
     <tail>
-        <div data-lift="comet?type=NomineeComet&name=2"></div>
+        <div data-lift="comet?type=NomineeComet&name=all"></div>
         <script id="angularjs" src="/classpath/fobo/angular.js"></script>
-        <script src="/assets/javascripts/nominees.js"></script>
         <script>
-            (function(){
-                $(document).ready(function() {
-                    $('.clearable').remove();
-                    $(document)
-                    .on('new-ng-vote', function(event, data) {
-                        console.log(data);
-                    });
-                });
-            })();
+            angular.module('myNominees', [])
+            .controller('myNominees.Ctrl', ['$scope', '$document', function($scope, $document) {
+
+           $scope.statss = {
+                {nominee: "1",
+                stats:  {
+                    nominee: null,
+                    mb: 0,
+                    mk: 0,
+                    fb: 0,
+                    fk: 0,
+                    tb: function() { return (this.mb + this.fb);},
+                    tk: function() { return (this.mk + this.fk);}
+                }
+                },
+      {nominee: "2",
+      stats:  {
+        nominee: null,
+        mb: 0,
+        mk: 0,
+        fb: 0,
+        fk: 0,
+        tb: function() { return (this.mb + this.fb);},
+        tk: function() { return (this.mk + this.fk);}
+      }
+      },
+      {nominee: "3",
+      stats:  {
+        nominee: null,
+        mb: 0,
+        mk: 0,
+        fb: 0,
+        fk: 0,
+        tb: function() { return (this.mb + this.fb);},
+        tk: function() { return (this.mk + this.fk);}
+      }
+      },
+      {nominee: "4",
+      stats:  {
+        nominee: null,
+        mb: 0,
+        mk: 0,
+        fb: 0,
+        fk: 0,
+        tb: function() { return (this.mb + this.fb);},
+        tk: function() { return (this.mk + this.fk);}
+      }
+      },
+      {nominee: "5",
+      stats:  {
+        nominee: null,
+        mb: 0,
+        mk: 0,
+        fb: 0,
+        fk: 0,
+        tb: function() { return (this.mb + this.fb);},
+        tk: function() { return (this.mk + this.fk);}
+      }
+      },
+      {nominee: "6",
+      stats:  {
+        nominee: null,
+        mb: 0,
+        mk: 0,
+        fb: 0,
+        fk: 0,
+        tb: function() { return (this.mb + this.fb);},
+        tk: function() { return (this.mk + this.fk);}
+      }
+      }
+      }
+
+      $document
+      .on('new-ng-vote', function(event, data) {
+        var stats = $scope.stattss[data.nominee].stats;
+        stats.mb = data.mb;
+        stats.mk = data.mk;
+        stats.fb = data.fb;
+        stats.fk = data.fk;
+
+        $scope.$digest();
+      });
+
+    }]);
         </script>
     </tail>
 </div>

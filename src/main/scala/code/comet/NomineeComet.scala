@@ -17,7 +17,7 @@ import net.liftweb.json.Extraction._
  */
 class NomineeComet extends CometActor with CometListener with Loggable {
 
-  def registerWith = State.nominees.get(name.getOrElse("ma")).get
+  def registerWith = State.nominees.get(name.getOrElse("ma")).getOrElse(State.nomineelist)
 
   override def lowPriority = {
 

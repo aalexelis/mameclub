@@ -3,6 +3,9 @@ package code.lib
 import code.model.Stats
 import net.liftweb.actor.LiftActor
 import net.liftweb.http.ListenerManager
+import net.liftweb.util
+import net.liftweb.util._
+import Helpers._
 
 /**
  * Created by andreas on 2/11/15.
@@ -17,6 +20,8 @@ object State {
     "6" -> new NomineeState
   )
 
+  val nomineelist = new NomineeState
+
   val pics = Map[String, String](
     "1" -> "nominee.minami.normal.jpg",
     "2" -> "nominee.nagata.normal.jpg",
@@ -26,7 +31,16 @@ object State {
     "6" -> "nominee.sonoda.normal.jpg"
   )
 
-  def addVote(v:Vote) = nominees.get(v.nominee).foreach(_ ! v)
+  autoSave()
+
+  def addVote(v:Vote) = {
+    nominees.get(v.nominee).foreach(_ ! v)
+    nomineelist ! v
+  }
+
+  def autoSave() = {
+    Schedule.schedule(() => saveScore(), 5 minutes)
+  }
 
   def saveScore() = {
     def saveNominee(id: String, score: Score) ={
